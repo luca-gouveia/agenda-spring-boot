@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>AgendaApp | Adicionar Contato</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/formContato.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a href="/contatos">
+            <span class="navbar-brand mb-0 h1">AgendaApp</span>
+        </a>
+        <a href="/add">
+            <button type="button" class="btn btn-primary btn-novo"> <i class="material-icons">add</i> Novo</button>
+        </a>
+    </nav>
+<!--    <span style="background: greenyellow; color: black;" th:text="${sucess}"></span>-->
+<!--    <span style="background: tomato; color: white;" th:text="${error}"></span>-->
+
+    <div class="container">
+        <div class="alert alert-success" role="alert" th:if="${not #strings.isEmpty(success)}">
+            <span th:text="${success}"></span>
+        </div>
+        <div class="alert alert-danger" role="alert" th:if="${not #strings.isEmpty(error)}">
+            <span th:text="${error}"></span>
+        </div>
+        <form method="POST">
+            <h4>Adicionar um novo contato</h4>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Nome" name="nome"  value="">
+            </div>
+            <div class="form-group">
+                <input type="email" class="form-control" placeholder="Email" name="email"  value="">
+            </div>
+            <div class="form-group">
+                <input type="text" class="form-control" placeholder="Telefone" name="telefone"  value="">
+            </div>
+            <button type="submit" class="btn btn-primary btn-salvar">Adicionar contato</button>
+        </form>
+    </div>
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-br" xmlns:th="http://thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+<head>
+    <meta charset="UTF-8">
+    <title>AgendaApp</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="/css/index.css" rel="stylesheet" media="screen">
+</head>
+<body>
+    <nav class="navbar navbar-light bg-light">
+        <a href="/contatos">
+            <span class="navbar-brand mb-0 h1">AgendaApp</span>
+        </a>
+        <a href="/add">
+            <button type="button" class="btn btn-primary btn-novo"> <i class="material-icons">add</i> Novo</button>
+        </a>
+    </nav>
+
+    <h1>Meus Contatos</h1>
+
+    <div class="container">
+        <div class="card" th:each="contato : ${contatos}">
+            <div class="card-body">
+                <b>Nome: </b><span th:text="${contato.nome}"></span><br>
+                <b>Email: </b><span th:text="${contato.email}"></span><br>
+                <b>Telefone: </b><span th:text="${contato.telefone}"></span><br><br>
+                <a th:href="@{${contato.id}}">
+                    <button type="button" class="btn btn-info btn-salvar"> Editar</button>
+                </a>
+                <a th:href="${(#mvc.url('AC#deletarContato').arg(0, contato.id)).build()}">
+                    <button type="button" class="btn btn-danger btn-salvar"> Remover</button>
+                </a>
+            </div>
+        </div>
+    </div>
+
+<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+</body>
+</html>

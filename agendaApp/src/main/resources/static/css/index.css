@@ -1,0 +1,33 @@
+body{
+    background: rgb(194,6,208);
+    background: linear-gradient(90deg, rgba(194,6,208,1) 0%, rgba(123,6,208,1) 75%);
+}
+.material-icons{
+    font-size: 18px;
+    position: absolute;
+    left: 8px;
+    top: 10px;
+}
+/*BOTOES*/
+.btn-novo{
+    width: 80px;
+    position: relative;
+    border-radius: 50px !important;
+    text-align: right;
+}
+.btn-salvar{
+    border-radius: 50px !important;
+}
+
+a{
+    text-decoration: none;
+}
+.card{
+    margin: 1em;
+}
+
+h1{
+    text-align: center;
+    margin: 1.5em;
+    color: white;
+}
